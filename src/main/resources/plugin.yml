@@ -1,0 +1,4 @@
+name: UUIDService
+main: rip.hippo.uuidservice.UUIDServicePlugin
+version: 1.0.0
+author: Hippo
