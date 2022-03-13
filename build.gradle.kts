@@ -1,9 +1,10 @@
 plugins {
     java
+    id("maven-publish")
 }
 
 group = "rip.hippo"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -20,4 +21,12 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
 }
