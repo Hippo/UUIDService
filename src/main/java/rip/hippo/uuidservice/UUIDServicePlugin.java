@@ -11,6 +11,7 @@ import java.util.logging.Level;
 public final class UUIDServicePlugin extends JavaPlugin {
   @Override
   public void onEnable() {
+    UUIDService.install(this);
     Bukkit.getLogger().log(Level.INFO, "Loaded UUID Service.");
   }
 }

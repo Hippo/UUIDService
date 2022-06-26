@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,6 +26,16 @@ public enum UUIDService {
   private static final JsonParser JSON_PARSER = new JsonParser();
   private static final String NAME_API_URL = "https://api.mojang.com/users/profiles/minecraft/";
   private static final String UUID_API_URL = "https://api.mojang.com/user/profile/";
+
+
+  static void register(Player player) {
+    PLAYER_UUID_MAP.put(player.getName(), player.getUniqueId());
+    UUID_PLAYER_MAP.put(player.getUniqueId().toString().replace("-", ""), player.getName());
+  }
+
+  public static void install(JavaPlugin javaPlugin) {
+    Bukkit.getPluginManager().registerEvents(new PlayerListener(), javaPlugin);
+  }
 
   public static Optional<UUID> getUUID(String name) {
     return Optional.ofNullable(
