@@ -93,4 +93,9 @@ public enum UUIDService {
         )
     );
   }
+
+  public static void flush() {
+    PLAYER_UUID_MAP.clear();
+    UUID_PLAYER_MAP.clear();
+  }
 }

@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation("rip.hippo:UUIDService:2.1.0")
+    implementation("rip.hippo:UUIDService:2.1.1")
 }
 ```
 
@@ -34,4 +34,14 @@ Optional<String> nameOption = UUIDService.getName(uuid);
 String name = ...;
 
 Optional<UUID> uuidOption = UUIDService.getUUID(name);
+
+
+// Flush cache
+UUIDService.flush();
+```
+
+There is also a utility method to create a `UUID` from a `UUID` string without dashes.
+```java
+String dashless = "f4a3dde95c00409da71d7f23507de0f2";
+UUID uuid = UUIDService.createUUID(dashless);
 ```
