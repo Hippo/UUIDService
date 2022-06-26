@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation("rip.hippo:UUIDService:2.1.1")
+    implementation("rip.hippo:UUIDService:2.1.2")
 }
 ```
 
@@ -36,7 +36,7 @@ String name = ...;
 Optional<UUID> uuidOption = UUIDService.getUUID(name);
 
 
-// Flush cache
+// Flush cache (note, the caches will be repopulated with data from the current online players)
 UUIDService.flush();
 ```
 
