@@ -50,7 +50,7 @@ public enum UUIDService {
             JsonObject jsonObject = JSON_PARSER.parse(bufferedReader).getAsJsonObject();
             String uuid = jsonObject.get("id").getAsString();
             return createUUID(uuid);
-          } catch (IOException e) {
+          } catch (Exception e) {
             return null;
           }
         })
@@ -75,7 +75,7 @@ public enum UUIDService {
 
             JsonObject jsonObject = JSON_PARSER.parse(bufferedReader).getAsJsonObject();
             return jsonObject.get("name").getAsString();
-          } catch (IOException e) {
+          } catch (Exception e) {
             return null;
           }
         })

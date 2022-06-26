@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation("rip.hippo:UUIDService:2.1.2")
+    implementation("rip.hippo:UUIDService:2.1.3")
 }
 ```
 
