@@ -13,9 +13,9 @@ repositories {
 }
 
 dependencies {
-    implementation("org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
